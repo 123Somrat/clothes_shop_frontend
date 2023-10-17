@@ -7,7 +7,7 @@ export default function Header() {
       <header className="dark:bg-gray-200 dark:text-black-100">
         <div className="container flex justify-between h-8 mx-auto">
           <Link
-           
+            to={"/"}
             aria-label="Back to homepage"
             className="flex items-center p-2"
           >
@@ -42,15 +42,14 @@ export default function Header() {
             </li>
             <li className="flex">
               <Link
-                rel="noopener noreferrer"
-                href="#"
+                to={"/register"}
                 className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent text-xs"
               >
                Register 
               </Link>
             </li>
           </ul>
-          <button className="flex justify-end p-4 md:hidden">
+          <button className="flex justify-end p-2 md:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

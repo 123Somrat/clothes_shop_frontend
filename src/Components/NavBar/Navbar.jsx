@@ -8,7 +8,7 @@ export default function Navbar() {
     <div>
 <header className="p-4 dark:bg-gray-100 dark:text-black-100">
 	<div className="container flex justify-between h-[30px] mx-auto">
-		<Link rel="noopener noreferrer" href="#" aria-label="Back to homepage" className="flex items-center p-2">
+		<Link to={"/"}aria-label="Back to homepage" className="flex items-center p-2">
         <SiNike className="w-12 h-12"/>
 		</Link>
 		<ul className="items-stretch hidden space-x-3 lg:flex">
@@ -25,7 +25,7 @@ export default function Navbar() {
 				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Ladies</Link>
 			</li>
             <li className="flex">
-				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Sale</Link>
+				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Add Product</Link>
 			</li>
 		</ul>
 		<div className="items-center flex-shrink-0 hidden lg:flex">
