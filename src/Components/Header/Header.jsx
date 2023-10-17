@@ -11,7 +11,7 @@ export default function Header() {
             aria-label="Back to homepage"
             className="flex items-center p-2"
           >
-          <SiNike className="w-6 h-6"/>
+          <SiNike className="w-6 h-6 ml-6"/>
           </Link>
           <ul className="items-stretch hidden space-x-3 md:flex">
             <li className="flex">
