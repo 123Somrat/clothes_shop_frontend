@@ -2,7 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayOuts from "../MainLayOuts/MainLayOuts";
 import Banner from "../Components/Banner/Banner";
 import Home from "../Components/Home/Home";
-import ShowBrandProduct from "../Components/ShowBrandProduct/ShowBrandProduct";
+import ShowBrandProducts from "../Components/ShowBrandProduct/ShowBrandProducts";
+import AddProduct from "../Components/AddProduct/AddProduct";
 
 
 const router = createBrowserRouter([
@@ -20,7 +21,11 @@ const router = createBrowserRouter([
         },
         {
           path:"/:brand_name",
-          element :<ShowBrandProduct/>
+          element :<ShowBrandProducts/>
+        },
+        {
+          path:"/addProduct",
+          element:<AddProduct/>
         }
       ]
     },

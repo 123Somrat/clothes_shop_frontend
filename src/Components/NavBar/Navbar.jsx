@@ -25,7 +25,7 @@ export default function Navbar() {
 				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Ladies</Link>
 			</li>
             <li className="flex">
-				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Add Product</Link>
+				<Link to={"/addProduct"} className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Add Product</Link>
 			</li>
 		</ul>
 		<div className="items-center flex-shrink-0 hidden lg:flex">
