@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom"
 
 export default function ShowProduct({product}) {
-   console.log(product)
+
    const {_id,imageUrl,brandName,productName,productType}=product;
   return (
     <div>
