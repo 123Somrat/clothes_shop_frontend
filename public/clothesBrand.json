@@ -1,0 +1,42 @@
+[
+    {
+      "id": "1",
+      "brand_name": "Nike",
+      "brand_image": "https://images.unsplash.com/photo-1608541737042-87a12275d313?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bmlrZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
+      "details": "Established in 1964, Nike is a global leader in athletic footwear and apparel."
+  },
+    
+    {
+      "id": "2",
+      "brand_name": "Adidas",
+      "brand_image": "https://cdn.britannica.com/94/193794-050-0FB7060D/Adidas-logo.jpg",
+      "details": "Adidas, founded in 1949, is known for its sportswear and iconic three-stripe logo."
+  },
+    
+    {
+      "id": "3",
+      "brand_name": "Zara",
+      "brand_image": "https://assets.teenvogue.com/photos/594920f31d23bb53d96d9748/master/pass/GettyImages-528590006.jpg",
+      "details": "Zara, since 1974, is a popular fashion retailer, offering trendy clothing worldwide."
+    },
+    {
+      "id": "4",
+      "brand_name": "H&M",
+      "brand_image": "https://images.unsplash.com/photo-1578983662508-41895226ebfb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aCUyNm18ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "details": "H&M, established in 1947, is a leading fashion brand with a global presence."
+    },
+    {
+      "id": "5",
+      "brand_name": "Levi's",
+      "brand_image": "https://turbologo.com/articles/wp-content/uploads/2020/01/levis-primary-logo.png",
+      "details": "Levi's, founded in 1853, is renowned for its denim jeans and classic apparel."
+    },
+    {
+      "id": "6",
+      "brand_name": "Gucci",
+      "brand_image": "https://i.pinimg.com/564x/41/dc/c2/41dcc2efb1ad148ed5d8f2edb6c21517.jpg",
+      "details": "Gucci, since 1921, is a luxury brand celebrated for its high-end fashion and accessories."
+  
+    }
+  ]
+  
