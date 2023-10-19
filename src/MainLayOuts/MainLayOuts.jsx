@@ -6,7 +6,7 @@ import LatestNewses from "../Components/LatestNewses/LatestNewses";
 
 export default function MainLayOuts() {
   return (
-    <div className="max-w-6xl mx-auto bg-red-100 m-2">
+    <div className="max-w-6xl mx-auto  m-2">
       <div>
         <Header />
       </div>

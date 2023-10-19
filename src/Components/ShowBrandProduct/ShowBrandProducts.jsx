@@ -7,7 +7,7 @@ export default function ShowBrandProduct() {
     const [error,setError] = useState("")
    const {brand_name} = useParams();
    useEffect(()=>{
-    fetch(`http://localhost:3000/${brand_name}`)
+    fetch(`http://localhost:3000/brands/${brand_name}`)
     .then(data=>data.json())
     .then(res=>setProduct(res))
     .catch(err=>setError(err))

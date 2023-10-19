@@ -21,10 +21,7 @@ const router = createBrowserRouter([
              path:'/',
              element:<Home/>
         },
-        {
-          path: "/*",
-          element:<NotFound/>
-        },
+       
         {
              path:"/register",
              element:<Register/>
@@ -34,7 +31,7 @@ const router = createBrowserRouter([
            element:<Login/>
         },
         {
-          path:"/:brand_name",
+          path:"/brands/:brand_name",
           element :<ShowBrandProducts/>
         },
         {
@@ -50,10 +47,16 @@ const router = createBrowserRouter([
           path :"/cart",
           element : <CartItems/>,
          
-        }
+        },
+        {
+          path: "/*",
+          element:<NotFound/>
+        },
         
-      ]
+      ],
+      
     },
+  
   ]);
 
 
