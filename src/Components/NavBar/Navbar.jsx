@@ -6,8 +6,8 @@ import { AuthContext } from '../../Providers/Providers';
 
 export default function Navbar() {
 	const { User,logOut} = useContext(AuthContext)
- 
-	
+
+	// <Link to={"/cart"}><BsFillCartCheckFill className='mr-4 w-8 h-8'/></Link> 
   return (
     <div>
 <header className="p-4 dark:bg-gray-100 dark:text-black-100">
@@ -34,8 +34,8 @@ export default function Navbar() {
 		</ul>
 		
 		<div className="items-center flex-shrink-0 hidden lg:flex">
-		
-		    <Link to={"/cart"}><BsFillCartCheckFill className='mr-4 w-8 h-8'/></Link> 
+		    
+		    {User && <span className='mr-2'>{User?.email}</span>}
             {User ? <button type="button" onClick={logOut}  className="px-8 py-3 font-semibold border rounded dark:border-gray-300 dark:text-black">LogOut</button>
 			: <Link to={"/login"}><button type="button" className="px-8 py-3 font-semibold border rounded dark:border-gray-300 dark:text-black">LogIn</button></Link>}
 		</div>

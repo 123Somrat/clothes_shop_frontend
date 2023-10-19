@@ -19,12 +19,14 @@ export default function Providers({children}) {
 
 // create user useing firebase
 const createUser = (fname,lname,email,password)=>{
+    setLoading(true)
          return createUserWithEmailAndPassword (auth,email,password)
 }
  
 // Login user with email and password
 
 const loginWithEmailAndPassword = (email,password)=>{
+    setLoading(true)
        return signInWithEmailAndPassword (auth,email,password)
 }
 
@@ -33,6 +35,7 @@ const loginWithEmailAndPassword = (email,password)=>{
 //  Login with Google 
  
 const loginUserWithGoogle = () =>{
+    setLoading(true)
     const provider = new GoogleAuthProvider();
    return signInWithPopup(auth,provider)
 
@@ -45,7 +48,7 @@ const loginUserWithGoogle = () =>{
             if (user) {
                 setUser(user)
                 // setLoading false after got user
-                setLoading(false)
+               return setLoading(false)
             } else {
                console.log("user signOut succesfully")
             }
