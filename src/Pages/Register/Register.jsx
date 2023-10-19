@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../Providers/Providers';
 import Swal from 'sweetalert2'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 export default function Register() {
       const { createUser} = useContext(AuthContext)
       const navigate = useNavigate()
@@ -117,8 +117,12 @@ export default function Register() {
                 <div className="col-span-full sm:col-span-3  lg:col-span-12 mx-auto">
                   <button type="submit" className="px-8 py-3 font-semibold border rounded dark:border-gray-400 dark:text-black">Register</button>
 				</div>
+                <div className="col-span-full sm:col-span-3  lg:col-span-12 mx-auto">
+                <p className="px-6 text-sm text-center dark:text-gray-400 inline-block">Have an account?
+				<Link to={"/login"} className="hover:underline dark:text-black">Log in</Link>.
+			</p>
+				</div>
                 
-					
 			</div>
 		</fieldset>
 		
