@@ -9,7 +9,7 @@ export default function ShowBrandProduct() {
     fetch(`http://localhost:3000/${brand_name}`)
     .then(data=>data.json())
     .then(res=>setProduct(res))
-    .catch(err=>console.log("somrat"))
+    .catch(err=>console.log(err.message))
    },[])
   
 

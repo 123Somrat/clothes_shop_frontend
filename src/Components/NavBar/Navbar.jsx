@@ -29,7 +29,8 @@ export default function Navbar() {
 			</li>
 		</ul>
 		<div className="items-center flex-shrink-0 hidden lg:flex">
-		    <BsFillCartCheckFill className='mr-4 w-8 h-8'/>
+		
+		    <Link to={"/cart"}><BsFillCartCheckFill className='mr-4 w-8 h-8'/></Link> 
             <h3>Somrat</h3>
 		</div>
 		<button className="p-4 lg:hidden">
