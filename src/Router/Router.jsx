@@ -8,6 +8,7 @@ import ShowProductDetails from "../Components/ShowProductDetails/ShowProductDeta
 import CartItems from "../Components/CartItems/CartItems";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -33,12 +34,12 @@ const router = createBrowserRouter([
         },
         {
           path:"/viewdetails/:_id",
-          element:<ShowProductDetails/>,
+          element:<PrivateRoute><ShowProductDetails/></PrivateRoute>,
           //loader:({params})=>fetch(`http://localhost:3000/viewdetails/${params._id}`)
         },
         {
           path:"/addProduct",
-          element:<AddProduct/>
+          element:<PrivateRoute><AddProduct/></PrivateRoute>
         },
         {
           path :"/cart",
