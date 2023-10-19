@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { SiNike } from "react-icons/si";
+import { AuthContext } from "../../Providers/Providers";
 export default function Header() {
+ 
   return (
     <div>
       <header className="dark:bg-gray-200 dark:text-black-100">
