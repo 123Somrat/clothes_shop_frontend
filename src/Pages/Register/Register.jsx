@@ -1,7 +1,11 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
+import { AuthContext } from '../../Providers/Providers';
+import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom';
 export default function Register() {
-      
+      const { createUser} = useContext(AuthContext)
+      const navigate = useNavigate()
+
     const handleSubmit = (e) => {
          e.preventDefault()
          const form = e.target;
@@ -10,8 +14,32 @@ export default function Register() {
          const email = form.email.value;
          const password = form.password.value;
 
-         console.log(fname,lname,email,password)
-
+        createUser(fname,lname,email,password)
+        .then(res=>{
+           Swal.fire({
+                title: 'Success',
+                text: 'User Created Successfully',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              
+              })
+           
+              return  navigate("/login")
+            
+        })
+        .catch(error=>{
+            Swal.fire({
+                 title: 'error',
+                 text: 'Email Already Exeist',
+                 icon: 'error',
+                 confirmButtonText: 'Cool'
+               
+               })
+               //reset the form
+               form.reset()
+              
+             
+         })
     }
 
   return (
