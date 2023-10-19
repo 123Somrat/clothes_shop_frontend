@@ -1,13 +1,55 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../Providers/Providers'
 import Swal from 'sweetalert2'
 
 
 export default function Login() {
-     const {loginUserWithGoogle} = useContext(AuthContext)
+    const [error,setError] = useState("")
+   // const [passError,setPassError] = useState("")
+     const {loginUserWithGoogle,loginWithEmailAndPassword} = useContext(AuthContext)
      const navigate = useNavigate()
+     
 
+  // login with email and password
+
+ const handleSubmit = (e) =>{
+     e.preventDefault()
+     const form = e.target;
+     const email = form.email.value;
+     const password = form.password.value
+
+     loginWithEmailAndPassword(email,password)
+     .then(res=>{
+        Swal.fire({
+             title: 'Success',
+             text: 'Login  Successfully',
+             icon: 'success',
+             confirmButtonText: 'Cool'
+           
+           })
+        
+           return  navigate("/")
+         
+     })
+     .catch(err=>{
+        Swal.fire({
+             title: 'error',
+             text: "UnAuthorized Credentials",
+             icon: 'error',
+             confirmButtonText: 'Cool'
+           
+           })
+       return  setError(err.message)
+          // return  navigate("/login")
+         
+     })
+ }
+
+
+
+
+    // Login User With Google
     const loginWithGoogle = () =>{
         loginUserWithGoogle()
         .then(data=>{
@@ -18,7 +60,7 @@ export default function Login() {
                  confirmButtonText: 'Cool'
                
                })
-            
+                setError("")
                return  navigate("/")
              
          })
@@ -36,21 +78,20 @@ export default function Login() {
          })
 
     }
-
-
-
   return (
     <div>
 <div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-200 dark:text-gray-100 mx-auto">
 	<h1 className="text-2xl font-bold text-center text-black">Login</h1>
-	<form  className="space-y-6">
+	<form  className="space-y-6" onSubmit={handleSubmit}>
 		<div className="space-y-1 text-sm">
 			<label htmlFor="username" className="block dark:text-black">Email</label>
 			<input type="email" name="email" id="username" placeholder="example@gmail.com" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-black focus:dark:border-violet-400" />
+            {Error && <span className='text-red-800 m-4 block'>{Error}</span>}
 		</div>
 		<div className="space-y-1 text-sm">
 			<label htmlFor="password" className="block dark:text-black">Password</label>
 			<input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-black focus:dark:border-violet-400" />
+            {Error && <span className='text-red-800 m-4 block'>{Error}</span>}
 		</div>
 		<button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 dark:bg-gray-100 text-lg">Login</button>
 	</form>
