@@ -10,7 +10,7 @@ export default function Login() {
      const {loginUserWithGoogle,loginWithEmailAndPassword} = useContext(AuthContext)
      const navigate = useNavigate();
      const location = useLocation();
-     console.log(location)
+  
      
 
   // login with email and password

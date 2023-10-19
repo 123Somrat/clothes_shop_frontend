@@ -1,9 +1,8 @@
 import { createContext, useEffect ,useState} from 'react'
 import { createUserWithEmailAndPassword , GoogleAuthProvider , signInWithPopup , signInWithEmailAndPassword , onAuthStateChanged , signOut } from "firebase/auth";
 import auth from '../FirebaseConfig/FirebaseConfig';
-import {  } from "firebase/auth";
 import Swal from 'sweetalert2'
-import { Navigate } from 'react-router-dom';
+
 
 
 
@@ -11,7 +10,12 @@ import { Navigate } from 'react-router-dom';
 export const AuthContext = createContext()
 
 export default function Providers({children}) {
+
    const [User,setUser] = useState(null)
+   const [loading,setLoading] = useState(true)
+
+
+
 
 // create user useing firebase
 const createUser = (fname,lname,email,password)=>{
@@ -40,6 +44,8 @@ const loginUserWithGoogle = () =>{
        onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
+                // setLoading false after got user
+                setLoading(false)
             } else {
                console.log("user signOut succesfully")
             }
@@ -75,7 +81,8 @@ const UserData = {
     loginUserWithGoogle,
     loginWithEmailAndPassword,
     User,
-    logOut
+    logOut,
+    loading
 }
 
 return( <AuthContext.Provider value={UserData}>
