@@ -17,18 +17,18 @@ export default function Navbar() {
 		</Link>
 		<ul className="items-stretch hidden space-x-3 lg:flex">
 			<li className="flex">
-				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Home</Link>
+				<Link to={"/"} className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Home</Link>
 			</li>
 			<li className="flex">
-				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Men's</Link>
+				<Link to={"/"}className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Men's</Link>
 			</li>
 			<li className="flex">
-				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Ladies</Link>
+				<Link to={"/"}className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Ladies</Link>
 			</li>
             <li className="flex">
 				<Link to={"/addProduct"} className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Add Product</Link>
 			</li><li className="flex">
-				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Cart</Link>
+				<Link to={"/"}className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Cart</Link>
 			</li>
 		</ul>
 		

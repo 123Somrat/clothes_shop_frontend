@@ -9,6 +9,7 @@ import CartItems from "../Components/CartItems/CartItems";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import NotFound from "../Components/NotFound/NotFound";
 
 
 const router = createBrowserRouter([
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         {
              path:'/',
              element:<Home/>
+        },
+        {
+          path: "/*",
+          element:<NotFound/>
         },
         {
              path:"/register",
@@ -46,6 +51,7 @@ const router = createBrowserRouter([
           element : <CartItems/>,
          
         }
+        
       ]
     },
   ]);

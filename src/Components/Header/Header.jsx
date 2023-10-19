@@ -18,7 +18,7 @@ export default function Header() {
           <ul className="items-stretch hidden space-x-3 md:flex">
             <li className="flex">
               <Link
-               
+               to={"/"}
                 className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent text-xs"
               >
               <span className="mr-4">search Store</span>   |
@@ -26,8 +26,7 @@ export default function Header() {
             </li>
             <li className="flex">
               <Link
-                rel="noopener noreferrer"
-                href="#"
+               to={"/"}
                 className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent text-xs"
               >
                <span className="mr-4">Help</span>  |
@@ -35,8 +34,7 @@ export default function Header() {
             </li>
             <li className="flex">
               <Link
-                rel="noopener noreferrer"
-                href="#"
+               to={"/"}
                 className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent text-xs "
               >
                <span className="mr-4">Be there</span>   |

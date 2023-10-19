@@ -14,7 +14,7 @@ export default function TopPicksProducts() {
           .catch(err=>console.log(err))
      },[])
 
-     console.log(topPicksProduct)
+  
   return (
     <div>
      <h1 className='text-3xl m-4'>Top Picks</h1>
