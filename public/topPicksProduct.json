@@ -1,0 +1,21 @@
+[
+    {
+      "brand": "Adidas",
+      "product": "MYSHELTER COLD.RDY",
+      "imageURL": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/ed5f05c533654057ad13fba0d921b46f_9366/MYSHELTER_COLD.RDY_Daunenjacke_Schwarz_IK3118_21_model.jpg",
+      "price": "180"
+    },
+    {
+      "brand": "Nike",
+      "product": "Nike Blazer Mid '77",
+      "imageURL": "https://i8.amplience.net/i/jpl/jd_175097_a?qlt=92&w=750&h=531&v=1&fmt=auto",
+      "price": "150"
+    },
+    {
+      "brand": "Fila",
+      "product": "Fila Disruptor EXP Women's",
+      "imageURL": "https://i8.amplience.net/i/jpl/jd_682907_a?qlt=92&w=750&h=531&v=1&fmt=auto",
+      "price": "99.90"
+    }
+  ]
+  
