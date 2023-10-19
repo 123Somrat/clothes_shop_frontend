@@ -20,9 +20,6 @@ export default function Navbar() {
 				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Home</Link>
 			</li>
 			<li className="flex">
-				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">News and highlights</Link>
-			</li>
-			<li className="flex">
 				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Men's</Link>
 			</li>
 			<li className="flex">
@@ -30,6 +27,8 @@ export default function Navbar() {
 			</li>
             <li className="flex">
 				<Link to={"/addProduct"} className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Add Product</Link>
+			</li><li className="flex">
+				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Cart</Link>
 			</li>
 		</ul>
 		
