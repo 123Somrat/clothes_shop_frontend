@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword , GoogleAuthProvider , signInWithPopup ,
 import auth from '../FirebaseConfig/FirebaseConfig';
 import {  } from "firebase/auth";
 import Swal from 'sweetalert2'
+import { Navigate } from 'react-router-dom';
 
 
 
@@ -60,7 +61,7 @@ const logOut = ()=>{
            
            })
            setUser(null)
-           return  navigate("/login")
+           
          
      })
       .catch((error) => {

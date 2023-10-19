@@ -7,7 +7,7 @@ import { AuthContext } from '../../Providers/Providers';
 export default function Navbar() {
 	const { User,logOut} = useContext(AuthContext)
  
-	 console.log(User)
+	
   return (
     <div>
 <header className="p-4 dark:bg-gray-100 dark:text-black-100">

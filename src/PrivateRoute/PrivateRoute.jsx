@@ -9,7 +9,7 @@ export default function PrivateRoute({children}) {
       if(User){
         return children
       }else{
-        return <Navigate to={"/login"} ></Navigate>
+        return <Navigate to={"/login"} state={location.pathname}></Navigate>
       }
 
   

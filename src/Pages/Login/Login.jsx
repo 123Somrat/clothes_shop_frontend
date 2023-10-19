@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../Providers/Providers'
 import Swal from 'sweetalert2'
 
@@ -8,7 +8,9 @@ export default function Login() {
     const [error,setError] = useState("")
    // const [passError,setPassError] = useState("")
      const {loginUserWithGoogle,loginWithEmailAndPassword} = useContext(AuthContext)
-     const navigate = useNavigate()
+     const navigate = useNavigate();
+     const location = useLocation();
+     console.log(location)
      
 
   // login with email and password
@@ -29,7 +31,7 @@ export default function Login() {
            
            })
         
-           return  navigate("/")
+           return  location.state ? navigate(location.state) : navigate("/")
          
      })
      .catch(err=>{
@@ -61,7 +63,7 @@ export default function Login() {
                
                })
                 setError("")
-               return  navigate("/")
+               return  location.state ? navigate(location.state) : navigate("/")
              
          })
         .catch(err=>{
@@ -80,7 +82,7 @@ export default function Login() {
     }
   return (
     <div>
-<div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-200 dark:text-gray-100 mx-auto">
+<div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-200 dark:text-gray-100 mx-auto m-4">
 	<h1 className="text-2xl font-bold text-center text-black">Login</h1>
 	<form  className="space-y-6" onSubmit={handleSubmit}>
 		<div className="space-y-1 text-sm">
