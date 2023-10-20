@@ -86,7 +86,7 @@ export default function AddProduct() {
 			<textarea id="rating" type="number" placeholder="Ratings" name="ratings" className="block w-full p-2 rounded autoexpand focus:outline-none focus:ring focus:ri focus:ri dark:bg-gray-800"></textarea>
 		</div>
 		<div>
-			<button type="submit" className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ri dark:bg-gray-200 focus:ri hover:ri dark:text-gray-900">Send</button>
+			<button type="submit" className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ri dark:bg-gray-200 focus:ri hover:ri dark:text-gray-900">Add Product</button>
 		</div>
 	</form>
 </section>
