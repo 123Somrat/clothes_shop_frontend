@@ -46,12 +46,12 @@ const router = createBrowserRouter([
         },
         {
           path :"/cartItems",
-          element : <CartItems/>,
+          element :<PrivateRoute><CartItems/></PrivateRoute> ,
          
         },
         {
           path:"/update/:id",
-          element:<UpdateItem/>
+          element:<PrivateRoute><UpdateItem/></PrivateRoute>
         },
         {
           path: "/*",
