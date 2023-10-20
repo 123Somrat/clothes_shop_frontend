@@ -9,24 +9,24 @@ export default function CartItems() {
   // fetching cart item
   useEffect(() => {
     fetch("http://localhost:3000/cartItems")
-      .then(res => res.json())
-      .then(data => setData(data))
-      .catch(err => console.error(err));
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch((err) => console.error(err));
   }, []);
 
-console.log(data)
+  console.log(data);
   return (
     <div>
       <h1 className="text-3xl my-4">Cart Items</h1>
       <div className="grid grid-cols-3 gap-4">
-      {
-          data.map((product,id)=><CartItem 
-           key={id}
-           product={product}
-          />)
-        }
+        {data.map((product, id) => (
+          <CartItem key={id} 
+          product={product} 
+          datas={data}
+          items = {setData}
+          />
+        ))}
       </div>
-        
     </div>
   );
 }
