@@ -10,6 +10,7 @@ import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import NotFound from "../Components/NotFound/NotFound";
+import UpdateItem from "../UpdateItem/UpdateItem";
 
 
 const router = createBrowserRouter([
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
           path :"/cartItems",
           element : <CartItems/>,
          
+        },
+        {
+          path:"/update/:_id",
+          element:<UpdateItem/>
         },
         {
           path: "/*",

@@ -13,7 +13,7 @@ export default function ShowProduct({product}) {
             <p className="dark:text-gray-500 mb-4">{productName}</p>
             <div>
                 <Link to={`/viewdetails/${_id}`}><button type="button" className="px-8 py-3 font-semibold border rounded dark:border-gray-400 dark:text-black ml-8 mr-2">Details</button></Link>
-                <button type="button" className="px-8 py-3 font-semibold border rounded dark:border-gray-400 dark:text-black">Update</button>
+                <Link to={`/update/${_id}`}><button type="button" className="px-8 py-3 font-semibold border rounded dark:border-gray-400 dark:text-black">Update</button></Link>
             </div>
         </div>
     </div>
