@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ShowProduct from './ShowProduct';
+import Advertisement from '../Advertisement/Advertisement';
 
 export default function ShowBrandProduct() {
     const [product,setProduct] = useState([])
@@ -17,6 +18,7 @@ export default function ShowBrandProduct() {
 console.log(error)
   return (
     <div>
+          <Advertisement/>
           {product.length>0 &&<h1 className='text-center m-8 text-3xl'>Products.......</h1>}
          {product.length===0 ? <h1 className='text-5xl text-black text-center m-12'>Opps Product Not Found..... </h1> : <div className='flex flex-wrap gap-4'>
            {

@@ -4,8 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+
 
 import "../../App.css";
 
@@ -29,10 +28,10 @@ const addLinks = ["https://www.youtube.com/embed/_h6aWfAhiis?autoplay=1&mute=1",
       >
         {
             addLinks.map((vedio,id)=><SwiperSlide key={id}>
-            <iframe
+            <iframe 
           
               width="1762"
-              height="801"
+               height="801"
               src={vedio}
               title="30 Second Nike Commercial"
               frameBorder="0"
