@@ -20,9 +20,9 @@ export default function Brand() {
   return (
     <div >
        <h1 className='text-red text-4xl ml-4 p-[26px]'>Brands...</h1> 
-       <div className="grid grid-cols-3 gap-4 my-4">
+       <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-4 my-4">
           {
-            brand.map((brand,id)=>(<Link to={`/brands/${brand.brand_name}`} key={id}><div  className="w-[370px] p-6 rounded-md shadow-md dark:bg-gray-100 dark:text-gray-50">
+            brand.map((brand,id)=>(<Link to={`/brands/${brand.brand_name}`} key={id}><div  className="w-[370px]  p-6 rounded-md shadow-md dark:bg-gray-100 dark:text-gray-50">
             <img src={brand.brand_image} alt="" className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
             <div className="mt-6 mb-2">
                 <span className="block text-md font-medium tracki uppercase dark:text-black">{brand?.brand_name}</span>

@@ -18,7 +18,7 @@ export default function TopPicksProducts() {
   return (
     <div>
      <h1 className='text-3xl m-4'>Top Picks</h1>
-     <div className='flex m-[10px]'>
+     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-[10px]'>
      {
         topPicksProduct.map((product,id)=><TopPicksProduct
          key = {id}
