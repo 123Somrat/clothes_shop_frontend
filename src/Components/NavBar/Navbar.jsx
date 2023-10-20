@@ -28,7 +28,7 @@ export default function Navbar() {
             <li className="flex">
 				<Link to={"/addProduct"} className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Add Product</Link>
 			</li><li className="flex">
-				<Link to={"/"}className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Cart</Link>
+				<Link to={"/cartItems"}className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Cart</Link>
 			</li>
 		</ul>
 		
