@@ -14,19 +14,26 @@ export default function CartItems() {
       .catch((err) => console.error(err));
   }, []);
 
-  console.log(data);
+ console.log(data.length)
   return (
     <div>
       <h1 className="text-3xl my-4">Cart Items</h1>
-      <div className="grid grid-cols-3 gap-4">
-        {data.map((product, id) => (
-          <CartItem key={id} 
-          product={product} 
-          datas={data}
-          items = {setData}
-          />
-        ))}
+      {data.length===0 ? <h1 className="text-5xl text-center my-24">No Item in cart</h1> 
+       :
+        <div className="grid grid-cols-3 gap-4">
+       {
+       data.map((product, id) => (
+        <CartItem key={id} 
+        product={product} 
+        datas={data}
+        items = {setData}
+        />
+      ))
+       }
+       
       </div>
+    
+      }
     </div>
   );
 }
