@@ -13,9 +13,9 @@ export default function MainLayOuts() {
       <div>
         <Navbar />
       </div>
-      <div>
+     <div>
         <LatestNewses/>
-      </div>
+     </div>
       <div>
         <Outlet/>
       </div>
