@@ -29,3 +29,11 @@ body {
   display: block;
   width: 100%;
 }
+
+
+.light{
+  background-color: #eee;
+}
+.dark {
+  background-color: lightgray;
+}

@@ -1,9 +1,25 @@
-import React, { useContext } from "react";
+import  { useState,useEffect} from "react";
 import { Link } from "react-router-dom";
 import { SiNike } from "react-icons/si";
-import { AuthContext } from "../../Providers/Providers";
+import "../../../src/App.css"
 export default function Header() {
- 
+  const [theme, setTheme] = useState('light');
+
+
+
+  const lighAndDarkMode = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  };
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
+
   return (
     <div>
       <header className="dark:bg-gray-200 dark:text-black-100">
@@ -13,31 +29,23 @@ export default function Header() {
             aria-label="Back to homepage"
             className="flex items-center p-2"
           >
-          <SiNike className="w-6 h-6 ml-6"/>
+            <SiNike className="w-6 h-6 ml-6" />
           </Link>
           <ul className="items-stretch hidden space-x-3 md:flex">
             <li className="flex">
               <Link
-               to={"/"}
+                to={"/"}
                 className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent text-xs"
               >
-              <span className="mr-4">search Store</span>   |
+                <span className="mr-4">search Store</span> |
               </Link>
             </li>
             <li className="flex">
               <Link
-               to={"/"}
+                to={"/"}
                 className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent text-xs"
               >
-               <span className="mr-4">Help</span>  |
-              </Link>
-            </li>
-            <li className="flex">
-              <Link
-               to={"/"}
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent text-xs "
-              >
-               <span className="mr-4">Be there</span>   |
+                <span className="mr-4">Help</span> |
               </Link>
             </li>
             <li className="flex">
@@ -45,9 +53,20 @@ export default function Header() {
                 to={"/register"}
                 className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent text-xs"
               >
-               Register 
+                Register
               </Link>
             </li>
+
+            <label
+              for="Toggle1"
+              className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100"
+            >
+              <span className="relative">
+                <input id="Toggle1" type="checkbox" className="hidden peer" onClick={lighAndDarkMode}/>
+                <div className="w-10 h-6 rounded-full shadow-inner dark:bg-gray-400 peer-checked:dark:bg-violet-400"></div>
+                <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-800"></div>
+              </span>
+            </label>
           </ul>
           <button className="flex justify-end p-2 md:hidden">
             <svg
