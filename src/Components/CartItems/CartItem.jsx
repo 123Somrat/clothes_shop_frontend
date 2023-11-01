@@ -32,7 +32,7 @@ export default function CartItem({ product, datas, items }) {
   };
 
   return (
-    <div >
+    <div>
       <div className="flex flex-col space-y-2 max-w-2xl p-4  sm:p-8  dark:text-black-100 ">
         <ul className="flex flex-col divide-y divide-gray-700">
           <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
@@ -54,10 +54,27 @@ export default function CartItem({ product, datas, items }) {
                     <p className="text-lg font-semibold">{price}€</p>
                   </div>
                 </div>
+                <div>
+                 Size <select className="bg-gray-100 outline-none border-none mr-2 mb-2">
+                    <option>42</option>
+                    <option>42.5</option>
+                    <option>43</option>
+                    <option>43.5</option>
+                    <option>44</option>
+                  </select>
+
+                 Crowd <select className="bg-gray-100 outline-none border-none mb-2">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
                 <div className="flex text-sm divide-x">
                   <button
                     type="button"
-                    className="flex items-center px-2 py-1 pl-0 space-x-1"
+                    className="flex items-center px-2 py-1 pl-0 space-x-1 mb-2"
                     onClick={() => deleteItem(_id)}
                   >
                     <svg
@@ -74,7 +91,7 @@ export default function CartItem({ product, datas, items }) {
                   </button>
                   <button
                     type="button"
-                    className="flex items-center px-2 py-1 space-x-1"
+                    className="flex items-center px-2 py-1 space-x-1 mb-2"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -85,13 +102,15 @@ export default function CartItem({ product, datas, items }) {
                     </svg>
                   </button>
                 </div>
+                <div className="flex ">
+                   <p className="mr-4">Free pickUp</p>
+                   <Link className="underline">Seach Store</Link>
+                </div>
               </div>
             </div>
           </li>
         </ul>
-       
       </div>
-     
     </div>
   );
 }
