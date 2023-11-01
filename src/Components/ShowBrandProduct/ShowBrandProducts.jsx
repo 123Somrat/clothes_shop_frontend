@@ -34,7 +34,7 @@ export default function ShowBrandProduct() {
         </div>
         
       ) : (
-        <div className="flex flex-wrap gap-4">
+        <div className="flex justify-center flex-wrap md:justify-normal gap-4">
           {product?.map((product, id) => (
             <ShowProduct key={id} product={product} />
           ))}
