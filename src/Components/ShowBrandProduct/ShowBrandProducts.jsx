@@ -15,8 +15,7 @@ export default function ShowBrandProduct() {
       .catch((err) => setError(err));
   }, []);
 
-  console.log(product);
-  console.log(error);
+  
   return (
     <div>
       {product.length > 0 && <Advertisement />}

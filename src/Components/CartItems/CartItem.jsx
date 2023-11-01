@@ -33,12 +33,12 @@ export default function CartItem({ product, datas, items }) {
 
   return (
     <div >
-      <div className="flex flex-col max-w-2xl p-4 space-y-2 sm:p-10 dark:bg-gray-200 dark:text-black-100 ">
+      <div className="flex flex-col space-y-2 max-w-2xl p-4  sm:p-8  dark:text-black-100 ">
         <ul className="flex flex-col divide-y divide-gray-700">
           <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
             <div className="flex w-full space-x-2 sm:space-x-4 h-[80px]">
               <img
-                className="flex-shrink-0 object-cover w-20 h-20 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500"
+                className="flex-shrink-0 object-cover w-12 h-12 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500"
                 src={imageUrl}
                 alt="Polaroid camera"
               />
