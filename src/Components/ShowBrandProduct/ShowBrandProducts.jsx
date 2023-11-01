@@ -1,34 +1,46 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import ShowProduct from './ShowProduct';
-import Advertisement from '../Advertisement/Advertisement';
-
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import Lottie from "lottie-react";
+import ShowProduct from "./ShowProduct";
+import Advertisement from "../Advertisement/Advertisement";
+import noProductFound from "../../../public/Animation - 1698835746643.json";
 export default function ShowBrandProduct() {
-    const [product,setProduct] = useState([])
-    const [error,setError] = useState("")
-   const {brand_name} = useParams();
-   useEffect(()=>{
+  const [product, setProduct] = useState([]);
+  const [error, setError] = useState("");
+  const { brand_name } = useParams();
+  useEffect(() => {
     fetch(`http://localhost:3000/brands/${brand_name}`)
-    .then(data=>data.json())
-    .then(res=>setProduct(res))
-    .catch(err=>setError(err))
-   },[])
+      .then((data) => data.json())
+      .then((res) => setProduct(res))
+      .catch((err) => setError(err));
+  }, []);
 
-   console.log(product)
-console.log(error)
+  console.log(product);
+  console.log(error);
   return (
     <div>
-          <Advertisement/>
-          {product.length>0 &&<h1 className='text-center m-8 text-3xl'>Products.......</h1>}
-         {product.length===0 ? <h1 className='text-5xl text-black text-center m-12'>Opps Product Not Found..... </h1> : <div className='flex flex-wrap gap-4'>
-           {
-             product?.map((product,id)=><ShowProduct 
-             key={id}
-             product= {product}
-             />)
-           }
-           </div>
-            }
+      {product.length > 0 && <Advertisement />}
+      {product.length > 0 && (
+        <h1 className="text-center m-8 text-3xl">Products.......</h1>
+      )}
+      {product.length === 0 ? (
+        <div className="w-[500px] h-[500px] mx-auto">
+          <Lottie
+            animationData={noProductFound}
+            loop={true}
+            height={400}
+            width={400}
+          />
+          <h3 className="text-2xl text-center text-red-700">Opps No Product Found In This Store</h3>
+        </div>
+        
+      ) : (
+        <div className="flex flex-wrap gap-4">
+          {product?.map((product, id) => (
+            <ShowProduct key={id} product={product} />
+          ))}
+        </div>
+      )}
     </div>
-  )
+  );
 }
