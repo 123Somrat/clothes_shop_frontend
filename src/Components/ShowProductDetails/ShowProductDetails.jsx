@@ -42,10 +42,10 @@ const addToCart = () => {
 }
  
   return (
-    <div>
+    <div >
        <section className="p-6 dark:bg-gray-100 dark:text-gray-100">
 	<div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
-    <img src={imageUrl}alt="" className="object-cover w-full rounded-md xl:col-span-3 dark:bg-gray-500" />
+    <img src={imageUrl}alt="" className="object-cover w-full rounded-md xl:col-span-3 dark:bg-gray-500 h-[550px]" />
 		<div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-200">
 			<span className="block mb-2 dark:text-black text-md">{brandName}</span>
 			<h1 className="text-3xl font-extrabold dark:text-black">{productName}</h1>

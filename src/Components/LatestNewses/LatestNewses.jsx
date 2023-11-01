@@ -35,7 +35,7 @@ export default function LatestNewses() {
           ))}
         </Marquee>
       }
-      ;
+    
     </div>
   );
 }
