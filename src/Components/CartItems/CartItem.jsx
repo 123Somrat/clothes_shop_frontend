@@ -33,7 +33,7 @@ export default function CartItem({ product, datas, items }) {
 
   return (
     <div>
-      <div className="flex flex-col space-y-2 max-w-2xl p-4  sm:p-8  dark:text-black-100 ">
+      <div className="flex flex-col  space-y-2 max-w-2xl p-4  sm:p-8  dark:text-black-100 ">
         <ul className="flex flex-col divide-y divide-gray-700">
           <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
             <div className="flex w-full space-x-2 sm:space-x-4 h-[80px]">

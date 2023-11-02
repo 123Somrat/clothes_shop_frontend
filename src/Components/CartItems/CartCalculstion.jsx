@@ -18,7 +18,7 @@ useEffect(()=>{
 
 
   return (
-    <div className=" w-3/12">
+    <div className="w-full p-4 md:w-3/12">
       <h1 className="text-2xl">Summary</h1>
       <section className=" dark:text-black">
         <div className="space-y-4">
