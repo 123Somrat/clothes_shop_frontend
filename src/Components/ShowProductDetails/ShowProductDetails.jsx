@@ -5,7 +5,7 @@ export default function ShowProductDetails() {
     const {_id} = useParams();
     const [product,setProduct] = useState({})
    useEffect(()=>{
-     fetch(`http://localhost:3000/viewdetails/${_id}`)
+     fetch(`https://clothes-shop-itwb.onrender.com/viewdetails/${_id}`)
      .then(data=>data.json())
      .then(res=>setProduct(res))
      .catch(err=>console.log(err.message))

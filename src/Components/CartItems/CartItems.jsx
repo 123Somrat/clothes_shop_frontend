@@ -9,7 +9,7 @@ export default function CartItems() {
 
   // fetching cart item
   useEffect(() => {
-    fetch("http://localhost:3000/cartItems")
+    fetch("https://clothes-shop-itwb.onrender.com/cartItems")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.error(err));

@@ -9,7 +9,7 @@ export default function ShowBrandProduct() {
   const [error, setError] = useState("");
   const { brand_name } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:3000/brands/${brand_name}`)
+    fetch(`https://clothes-shop-itwb.onrender.com/brands/${brand_name}`)
       .then((data) => data.json())
       .then((res) => setProduct(res))
       .catch((err) => setError(err));

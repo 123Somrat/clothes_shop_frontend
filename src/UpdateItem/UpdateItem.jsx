@@ -42,7 +42,7 @@ export default function UpdateItem() {
       description,
       ratings,
     };
-    fetch(`http://localhost:3000/products/${id}`, {
+    fetch(`https://clothes-shop-itwb.onrender.com/products/${id}`, {
       method: "put",
       headers: {
         "content-type": "application/json",

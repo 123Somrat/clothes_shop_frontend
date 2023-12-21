@@ -38,7 +38,7 @@ export default function CartItem({ product, datas, items }) {
     setItem(item)
     setProductPrice(item*price)
     
-    fetch(`http://localhost:3000/cartItems/${_id}`,{
+    fetch(`https://clothes-shop-itwb.onrender.com/cartItems/${_id}`,{
        method:"post",
        headers :{
          "content-type" : "application/json"
