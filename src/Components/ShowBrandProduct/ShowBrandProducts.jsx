@@ -14,7 +14,7 @@ export default function ShowBrandProduct() {
       .then((data) => data.json())
       .then((res) => setProduct(res))
       .catch((err) => setError(err));
-  }, [brand_name]);
+  }, []);
 
   
   return (
