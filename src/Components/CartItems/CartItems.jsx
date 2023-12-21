@@ -25,7 +25,7 @@ export default function CartItems() {
       <h1 className="text-3xl my-4">Shopping Cart</h1>
       {data.length===0 ? <h1 className="text-5xl text-center my-24">No Item in cart</h1> 
        :
-       <div className="flex flex-col  md:flex lg:flex gap-8 max-w-6xl">
+       <div className="flex-cols  md:flex lg:flex gap-8 max-w-6xl">
         <div className="grid  grid-cols-1 w-full gap-4 md:w-7/12 divide-y">
        {
        data.map((product, id) => (

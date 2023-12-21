@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import CartCalculstion from "./CartCalculstion";
+import { useEffect,useState} from "react";
 
 export default function CartItem({ product, datas, items }) {
   const { _id, imageUrl, brandName, productName, price } = product;
-
+  const [item,setItem] = useState(1)
+  const [productPrice,setProductPrice] = useState(0)
   const deleteItem = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -31,6 +33,21 @@ export default function CartItem({ product, datas, items }) {
     });
   };
 
+  const productCount = (e) =>{
+    const item = e.target.value;
+    setItem(item)
+    setProductPrice(item*price)
+    
+    fetch(`http://localhost:3000/cartItems/${_id}`,{
+       method:"post",
+       headers :{
+         "content-type" : "application/json"
+       },
+       body : JSON.stringify({item})
+    })     
+      
+  } 
+
   return (
     <div>
       <div className="flex flex-col  space-y-2 max-w-2xl p-4  sm:p-8  dark:text-black-100 ">
@@ -51,7 +68,7 @@ export default function CartItem({ product, datas, items }) {
                     <p className="text-sm dark:text-gray-400">{brandName}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-lg font-semibold">{price}€</p>
+                    <p className="text-lg font-semibold">{item*price}€</p>
                   </div>
                 </div>
                 <div>
@@ -63,12 +80,12 @@ export default function CartItem({ product, datas, items }) {
                     <option>44</option>
                   </select>
 
-                 Crowd <select className="bg-gray-100 outline-none border-none mb-2">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                 Crowd <select className="bg-gray-100 outline-none border-none mb-2" value={item} onChange={productCount}>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                   </select>
                 </div>
                 <div className="flex text-sm divide-x">

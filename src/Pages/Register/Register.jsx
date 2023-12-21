@@ -56,6 +56,7 @@ export default function Register() {
 
         createUser(fname,lname,email,password)
         .then(res=>{
+          console.log(res)
            Swal.fire({
                 title: 'Success',
                 text: 'User Created Successfully',

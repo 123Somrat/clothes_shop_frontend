@@ -23,7 +23,7 @@ const addToCart = () => {
          headers : {
              "content-type" :"application/json"
          },
-         body : JSON.stringify(product)
+         body : JSON.stringify({...product,item:"1"})
      })
      .then(data=>data.json())
      .then(res=>Swal.fire({

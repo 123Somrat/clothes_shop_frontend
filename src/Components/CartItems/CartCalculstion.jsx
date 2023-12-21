@@ -5,9 +5,13 @@ export default function CartCalculstion({cartProduct}) {
 
 // calculating cart product price
 useEffect(()=>{
+  
     cartProduct.reduce((prev,cur)=>{
-      const total =  prev+Number(cur.price)
+
+      const total =  prev + Number(cur.price*cur.item)
+       
          setPrice(total)
+  
        return  total
     },0)
    

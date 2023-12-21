@@ -9,7 +9,7 @@ export default function Brand() {
    const [brand,setBrand] = useState([])
      useEffect(()=>{
           AOS.init()
-         fetch("../../../public/clothesBrand.json")
+         fetch("clothesBrand.json")
          .then(data=>data.json())
          .then(res=>setBrand(res))
 
