@@ -18,7 +18,7 @@ export default function ShowProductDetails() {
 
    // add cart item in database
 const addToCart = () => {
-     fetch("http://localhost:3000/addToCart",{
+     fetch("https://clothes-shop-itwb.onrender.com/addToCart",{
          method : "POST",
          headers : {
              "content-type" :"application/json"
