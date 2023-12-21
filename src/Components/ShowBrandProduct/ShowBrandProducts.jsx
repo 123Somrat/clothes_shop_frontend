@@ -8,6 +8,7 @@ export default function ShowBrandProduct() {
   const [product, setProduct] = useState([]);
   const [error, setError] = useState("");
   const { brand_name } = useParams();
+  
   useEffect(() => {
     fetch(`https://clothes-shop-itwb.onrender.com/brands/${brand_name}`)
       .then((data) => data.json())
