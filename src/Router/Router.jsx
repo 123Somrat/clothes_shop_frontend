@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         {
           path:"/viewdetails/:_id",
           element:<PrivateRoute><ShowProductDetails/></PrivateRoute>,
-          //loader:({params})=>fetch(`http://localhost:3000/viewdetails/${params._id}`)
+          loader:({params})=>params
         },
         {
           path:"/addProduct",

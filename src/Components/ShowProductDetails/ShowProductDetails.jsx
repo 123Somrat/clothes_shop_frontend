@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useLoaderData, useParams } from 'react-router-dom'
 import Swal from 'sweetalert2'
 export default function ShowProductDetails() {
     const {_id} = useParams();
     const [product,setProduct] = useState({})
-    
+    const params = useLoaderData()
    useEffect(()=>{
-     fetch(`https://clothes-shop-itwb.onrender.com/viewdetails/${_id}`)
+     fetch(`https://clothes-shop-itwb.onrender.com/viewdetails/${params._id}`)
      .then(data=>data.json())
      .then(res=>setProduct(res))
      .catch(err=>console.log(err.message))
