@@ -10,7 +10,7 @@ export default function ShowBrandProduct() {
   const { brand_name } = useParams();
   
   useEffect(() => {
-    fetch(`https://clothes-shop-iqis.onrender.com/brands/${brand_name}`)
+    fetch(` https://clothes-shop-iqis.onrender.com./brands/${brand_name}`)
       .then((data) => data.json())
       .then((res) => setProduct(res))
       .catch((err) => setError(err));
