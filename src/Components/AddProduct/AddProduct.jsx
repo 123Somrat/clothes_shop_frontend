@@ -26,7 +26,7 @@ export default function AddProduct() {
      }
      // send data in backEnd 
    
-        fetch("https://clothes-shop-itwb.onrender.com/products",{
+        fetch("https://clothes-shop-iqis.onrender.com/products",{
             method: "post",
             headers: {
                 "content-type": "application/json"

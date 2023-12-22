@@ -7,7 +7,7 @@ export default function UpdateItem() {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:3000/update/${id}`)
+    fetch(`https://clothes-shop-iqis.onrender.com/update/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
