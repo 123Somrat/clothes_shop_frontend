@@ -33,7 +33,8 @@ const router = createBrowserRouter([
         },
         {
           path:"/brands/:brand_name",
-          element :<ShowBrandProducts/>
+          element :<ShowBrandProducts/>,
+          loader:({params})=>params
         },
         {
           path:"/viewdetails/:_id",

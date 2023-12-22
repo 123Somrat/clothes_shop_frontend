@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import Lottie from "lottie-react";
 import ShowProduct from "./ShowProduct";
 import Advertisement from "../Advertisement/Advertisement";
@@ -8,9 +8,11 @@ export default function ShowBrandProduct() {
   const [product, setProduct] = useState([]);
   const [error, setError] = useState("");
   const { brand_name } = useParams();
+  const data = useLoaderData();
+  console.log()
   
   useEffect(() => {
-    fetch(` https://clothes-shop-iqis.onrender.com/brands/Nike`)
+    fetch(` https://clothes-shop-iqis.onrender.com/brands/${data.brand_name}`)
       .then((data) => data.json())
       .then((res) => setProduct(res))
       .catch((err) => setError(err));

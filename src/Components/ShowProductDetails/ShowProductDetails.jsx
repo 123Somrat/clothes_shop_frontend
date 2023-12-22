@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'
 export default function ShowProductDetails() {
     const {_id} = useParams();
     const [product,setProduct] = useState({})
+    
    useEffect(()=>{
      fetch(`https://clothes-shop-itwb.onrender.com/viewdetails/${_id}`)
      .then(data=>data.json())
