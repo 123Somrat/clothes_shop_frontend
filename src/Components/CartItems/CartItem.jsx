@@ -18,7 +18,7 @@ export default function CartItem({ product, datas, items }) {
       confirmButtonText: "Yes, delete it!",
     }).then((res) => {
       if (res.isConfirmed) {
-        fetch(`http://localhost:3000/deleteitem/${id}`, {
+        fetch(`https://clothes-shop-iqis.onrender.com/deleteitem/${id}`, {
           method: "delete",
         })
           .then((res) => res.json())
