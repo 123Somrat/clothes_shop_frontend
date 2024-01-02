@@ -1,7 +1,7 @@
 import {useEffect, useState }from "react";
 import { Link } from "react-router-dom";
 
-export default function CartCalculstion({cartProduct}) {
+export default function CartCalculstion({cartProduct,count}) {
     const [price,setPrice] = useState(0)
 
 // calculating cart product price
@@ -16,7 +16,7 @@ useEffect(()=>{
        return  total
     },0)
    
-},[cartProduct])
+},[cartProduct,count])
  
 
 

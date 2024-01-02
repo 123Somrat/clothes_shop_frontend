@@ -6,7 +6,7 @@ import CartCalculstion from "./CartCalculstion";
 
 export default function CartItems() {
   const [data, setData] = useState([]);
-
+  const [count,setCount] = useState(0)
   // fetching cart item
   useEffect(() => {
     fetch("https://clothes-shop-iqis.onrender.com/cartItems")
@@ -14,6 +14,12 @@ export default function CartItems() {
       .then((data) => setData(data))
       .catch((err) => console.error(err));
   }, []);
+
+ const ProductCount = (productCount) =>{
+       setCount(productCount)
+ }
+
+
 
   return (
     <div>
@@ -33,11 +39,12 @@ export default function CartItems() {
         product={product} 
         datas={data}
         items = {setData}
+        ProductCount = {ProductCount}
         />
       ))
        }
       </div>
-        <CartCalculstion cartProduct={data}/>
+        <CartCalculstion cartProduct={data} count={count}/>
         </div>
       }
       

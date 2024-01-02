@@ -3,8 +3,9 @@ import Swal from "sweetalert2";
 import CartCalculstion from "./CartCalculstion";
 import { useEffect,useState} from "react";
 
-export default function CartItem({ product, datas, items }) {
-  const { _id, imageUrl, brandName, productName, price } = product;
+export default function CartItem({ product, datas, items ,ProductCount}) {
+  console.log(product)
+  const { _id, imageUrl, brandName,item:count, productName, price } = product;
   const [item,setItem] = useState(1)
   const [productPrice,setProductPrice] = useState(0)
   const deleteItem = (id) => {
@@ -36,8 +37,8 @@ export default function CartItem({ product, datas, items }) {
   const productCount = (e) =>{
     const item = e.target.value;
     setItem(item)
-    setProductPrice(item*price)
-    
+    //setProductPrice(item*price)
+   // ProductCount(item)
     fetch(`https://clothes-shop-iqis.onrender.com/cartItems/${_id}`,{
        method:"post",
        headers :{
@@ -68,7 +69,7 @@ export default function CartItem({ product, datas, items }) {
                     <p className="text-sm dark:text-gray-400">{brandName}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-lg font-semibold">{item*price}€</p>
+                    <p className="text-lg font-semibold">{count*price}€</p>
                   </div>
                 </div>
                 <div>
@@ -80,7 +81,7 @@ export default function CartItem({ product, datas, items }) {
                     <option>44</option>
                   </select>
 
-                 Crowd <select className="bg-gray-100 outline-none border-none mb-2" value={item} onChange={productCount}>
+                 Crowd <select className="bg-gray-100 outline-none border-none mb-2" defaultValue={count} onChange={productCount}>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
