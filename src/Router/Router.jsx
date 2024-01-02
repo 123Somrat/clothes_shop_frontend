@@ -11,6 +11,7 @@ import Login from "../Pages/Login/Login";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import NotFound from "../Components/NotFound/NotFound";
 import UpdateItem from "../UpdateItem/UpdateItem";
+import Checkout from "../Pages/Checkout/Checkout";
 
 
 const router = createBrowserRouter([
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
           path:"/update/:id",
           element:<PrivateRoute><UpdateItem/></PrivateRoute>,
           loader:({params})=>params
+        },
+        {
+          path:"/checkout",
+          element :<Checkout/>
         },
         {
           path: "/*",

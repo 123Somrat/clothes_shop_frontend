@@ -7,6 +7,7 @@ export default function UpdateItem() {
   const [product, setProduct] = useState({});
   const params = useLoaderData();
   const id = params.id;
+  
   useEffect(() => {
     fetch(`https://clothes-shop-iqis.onrender.com/update/${id}`)
       .then((res) => res.json())
@@ -43,6 +44,7 @@ export default function UpdateItem() {
       description,
       ratings,
     };
+   
     fetch(`https://clothes-shop-itwb.onrender.com/products/${id}`, {
       method: "put",
       headers: {
