@@ -1,17 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
+import { lazy } from "react";
 import MainLayOuts from "../MainLayOuts/MainLayOuts";
 import Banner from "../Components/Banner/Banner";
 import Home from "../Components/Home/Home";
-import ShowBrandProducts from "../Components/ShowBrandProduct/ShowBrandProducts";
-import AddProduct from "../Components/AddProduct/AddProduct";
-import ShowProductDetails from "../Components/ShowProductDetails/ShowProductDetails";
-import CartItems from "../Components/CartItems/CartItems";
-import Register from "../Pages/Register/Register";
-import Login from "../Pages/Login/Login";
-import PrivateRoute from "../PrivateRoute/PrivateRoute";
-import NotFound from "../Components/NotFound/NotFound";
-import UpdateItem from "../UpdateItem/UpdateItem";
-import Checkout from "../Pages/Checkout/Checkout";
+const  ShowBrandProducts  = lazy(()=>import( "../Components/ShowBrandProduct/ShowBrandProducts"));
+const  AddProduct =  lazy(()=>import("../Components/AddProduct/AddProduct"));
+const  ShowProductDetails = lazy(()=>import("../Components/ShowProductDetails/ShowProductDetails"));
+const  CartItems = lazy(()=>import("../Components/CartItems/CartItems"));
+const  Register = lazy(()=>import("../Pages/Register/Register"));
+const Login = lazy(()=>import("../Pages/Login/Login"));
+const PrivateRoute =lazy(()=>import("../PrivateRoute/PrivateRoute"));
+const NotFound =  lazy(()=>import("../Components/NotFound/NotFound"));
+const UpdateItem =lazy(()=>import("../UpdateItem/UpdateItem")) ;
+const Checkout = lazy(()=>import("../Pages/Checkout/Checkout"));
 
 
 const router = createBrowserRouter([

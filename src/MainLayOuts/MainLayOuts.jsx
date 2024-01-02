@@ -1,4 +1,4 @@
-import React from "react";
+import {Suspense} from "react";
 import Header from "../Components/Header/Header";
 import Navbar from "../Components/NavBar/Navbar";
 import { Outlet } from "react-router-dom";
@@ -17,7 +17,9 @@ export default function MainLayOuts() {
         <LatestNewses/>
      </div>
       <div>
-        <Outlet/>
+        <Suspense fallback={<h1>Loading.......</h1>}>
+           <Outlet/>
+        </Suspense>
       </div>
     </div>
   );
