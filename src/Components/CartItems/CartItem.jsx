@@ -1,14 +1,10 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import CartCalculstion from "./CartCalculstion";
-import { useEffect,useState} from "react";
+import { useEffect, useState } from "react";
 
-export default function CartItem({ product, datas, items ,ProductCount}) {
-
-  const { _id, imageUrl, brandName,item:count, productName, price } = product;
-
-
-
+export default function CartItem({ product, datas, items, ProductCount }) {
+  const { _id, imageUrl, brandName, item: count, productName, price } = product;
 
   const deleteItem = (id) => {
     Swal.fire({
@@ -36,26 +32,23 @@ export default function CartItem({ product, datas, items ,ProductCount}) {
     });
   };
 
-
-  const productCount = (e) =>{
+  const productCount = (e) => {
     const item = e.target.value;
-     console.log('i am calling after chajnge product count')
+    console.log("i am calling after chajnge product count");
     //setProductPrice(item*price)
-   // ProductCount(item)
-    fetch(`https://clothes-shop-iqis.onrender.com/cartItems/${_id}`,{
-       method:"post",
-       headers :{
-         "content-type" : "application/json"
-       },
-       body : JSON.stringify({item})
+    // ProductCount(item)
+    fetch(`https://clothes-shop-iqis.onrender.com/cartItems/${_id}`, {
+      method: "post",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ item }),
     })
-    .then(res=>res.json())
-    .then(data=>data.modifiedCount>0 && ProductCount(item))
-    .catch(err=>console.log(err))   
-   
-   
-  } 
- 
+      .then((res) => res.json())
+      .then((data) => data.modifiedCount > 0 && ProductCount(item))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div>
       <div className="flex flex-col  space-y-2 max-w-2xl p-4  sm:p-8  dark:text-black-100 ">
@@ -76,19 +69,24 @@ export default function CartItem({ product, datas, items ,ProductCount}) {
                     <p className="text-sm dark:text-gray-400">{brandName}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-lg font-semibold">{count*price}€</p>
+                    <p className="text-lg font-semibold">{count * price}€</p>
                   </div>
                 </div>
                 <div>
-                 Size <select className="bg-gray-100 outline-none border-none mr-2 mb-2">
+                  Size{" "}
+                  <select className="bg-gray-100 outline-none border-none mr-2 mb-2">
                     <option>42</option>
                     <option>42.5</option>
                     <option>43</option>
                     <option>43.5</option>
                     <option>44</option>
                   </select>
-
-                 Crowd <select className="bg-gray-100 outline-none border-none mb-2" defaultValue={count} onChange={productCount}>
+                  Crowd{" "}
+                  <select
+                    className="bg-gray-100 outline-none border-none mb-2"
+                    defaultValue={count}
+                    onChange={productCount}
+                  >
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -128,8 +126,8 @@ export default function CartItem({ product, datas, items ,ProductCount}) {
                   </button>
                 </div>
                 <div className="flex ">
-                   <p className="mr-4">Free pickUp</p>
-                   <Link className="underline">Seach Store</Link>
+                  <p className="mr-4">Free pickUp</p>
+                  <Link className="underline">Seach Store</Link>
                 </div>
               </div>
             </div>

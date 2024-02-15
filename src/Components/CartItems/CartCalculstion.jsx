@@ -1,28 +1,21 @@
-import {useEffect, useState }from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Checkout from "../../Pages/Checkout/Checkout";
 import Swal from "sweetalert2";
 
-export default function CartCalculstion({cartProduct,count}) {
-    const [price,setPrice] = useState(0)
+export default function CartCalculstion({ cartProduct, count }) {
+  const [price, setPrice] = useState(0);
 
-// calculating cart product price
-useEffect(()=>{
-  
-    cartProduct.reduce((prev,cur)=>{
+  // calculating cart product price
+  useEffect(() => {
+    cartProduct.reduce((prev, cur) => {
+      const total = prev + Number(cur.price * cur.item);
 
-      const total =  prev + Number(cur.price*cur.item)
-       
-         setPrice(total)
-  
-       return  total
-    },0)
-   
-},[cartProduct,count])
- 
+      setPrice(total);
 
-
-
+      return total;
+    }, 0);
+  }, [cartProduct, count]);
 
   return (
     <div className="w-full p-4 md:w-3/12">
@@ -51,27 +44,33 @@ useEffect(()=>{
         </div>
       </section>
       <div className="divide-y">
-      <div className="flex justify-between py-2">
-         <p className="text-md">Subtotal</p>
-         <p>€{price}</p>
+        <div className="flex justify-between py-2">
+          <p className="text-md">Subtotal</p>
+          <p>€{price}</p>
+        </div>
+        <div className="flex justify-between py-2">
+          <p className="text-md">Estimated shipping and handling</p>
+          <p>For</p>
+        </div>
+        <div className="flex justify-between py-2">
+          <p className="text-md">costs</p>
+          <p>{price > 100 ? "Free" : "5€"}</p>
+        </div>
+        <div className="flex justify-between py-2">
+          <p className="text-md">In total</p>
+          <p>{price}€</p>
+        </div>
+        <div>
+          <Link to={"/checkout"}>
+            <button
+              type="button"
+              className="px-8 py-3 font-semibold rounded-full dark:bg-gray-600 dark:text-white w-full my-4"
+            >
+              Checkout
+            </button>
+          </Link>
+        </div>
       </div>
-      <div className="flex justify-between py-2">
-         <p className="text-md">Estimated shipping and handling</p>
-         <p>For</p>
-      </div>
-      <div className="flex justify-between py-2">
-         <p className="text-md">costs</p>
-         <p>{price >100 ? "Free" : "5€"}</p>
-      </div>
-      <div className="flex justify-between py-2">
-         <p className="text-md">In  total</p>
-         <p>{price}€</p>
-      </div>
-      <div>
-      <Link to={'/checkout'}><button type="button" className="px-8 py-3 font-semibold rounded-full dark:bg-gray-600 dark:text-white w-full my-4">Checkout</button></Link>
-      </div>
-      </div>
-
     </div>
   );
 }
