@@ -4,10 +4,12 @@ import CartCalculstion from "./CartCalculstion";
 import { useEffect,useState} from "react";
 
 export default function CartItem({ product, datas, items ,ProductCount}) {
-  console.log(product)
+
   const { _id, imageUrl, brandName,item:count, productName, price } = product;
-  const [item,setItem] = useState(1)
-  const [productPrice,setProductPrice] = useState(0)
+
+
+
+
   const deleteItem = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -34,9 +36,10 @@ export default function CartItem({ product, datas, items ,ProductCount}) {
     });
   };
 
+
   const productCount = (e) =>{
     const item = e.target.value;
-    setItem(item)
+     console.log('i am calling after chajnge product count')
     //setProductPrice(item*price)
    // ProductCount(item)
     fetch(`https://clothes-shop-iqis.onrender.com/cartItems/${_id}`,{
@@ -45,10 +48,14 @@ export default function CartItem({ product, datas, items ,ProductCount}) {
          "content-type" : "application/json"
        },
        body : JSON.stringify({item})
-    })     
-      
+    })
+    .then(res=>res.json())
+    .then(data=>data.modifiedCount>0 && ProductCount(item))
+    .catch(err=>console.log(err))   
+   
+   
   } 
-
+ 
   return (
     <div>
       <div className="flex flex-col  space-y-2 max-w-2xl p-4  sm:p-8  dark:text-black-100 ">

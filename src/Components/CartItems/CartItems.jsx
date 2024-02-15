@@ -13,11 +13,12 @@ export default function CartItems() {
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.error(err));
-  }, []);
+  }, [count]);
 
  const ProductCount = (productCount) =>{
        setCount(productCount)
  }
+
 
 
 
