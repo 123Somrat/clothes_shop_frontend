@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 export default function Checkout() {
-  return (
-    <div>
-          <h1 className='text-2xl'>This is checkout page</h1>
+  const navigate = useNavigate()
 
+  useEffect(()=>{
+       fetch('https://clothes-shop-iqis.onrender.com/deleteAllCartItems',{
+         method:'delete',
+       })
+       .then(res=>res.json())
+       .then(data=>data.deletedCount > 0 &&Swal.fire("Success", "Your item Placed successfully.", "success"))
 
+      navigate('/')
+      
 
-    </div>
-  )
+  },[])
+    
 }

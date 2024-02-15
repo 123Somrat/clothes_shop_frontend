@@ -1,5 +1,7 @@
 import {useEffect, useState }from "react";
 import { Link } from "react-router-dom";
+import Checkout from "../../Pages/Checkout/Checkout";
+import Swal from "sweetalert2";
 
 export default function CartCalculstion({cartProduct,count}) {
     const [price,setPrice] = useState(0)
@@ -66,7 +68,7 @@ useEffect(()=>{
          <p>{price}€</p>
       </div>
       <div>
-      <Link to={"/checkout"}><button type="button" className="px-8 py-3 font-semibold rounded-full dark:bg-gray-600 dark:text-white w-full my-4">Checkout</button></Link>
+      <Link to={'/checkout'}><button type="button" className="px-8 py-3 font-semibold rounded-full dark:bg-gray-600 dark:text-white w-full my-4">Checkout</button></Link>
       </div>
       </div>
 
